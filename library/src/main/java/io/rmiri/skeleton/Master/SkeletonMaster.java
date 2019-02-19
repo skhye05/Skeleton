@@ -1,5 +1,6 @@
 package io.rmiri.skeleton.Master;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
@@ -51,6 +52,7 @@ public class SkeletonMaster extends RelativeLayout {
         init(context, attrs);
     }
 
+    @SuppressLint("ResourceAsColor")
     public void init(Context context, @Nullable AttributeSet attrs) {
 
 
