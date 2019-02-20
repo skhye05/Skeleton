@@ -1,6 +1,5 @@
 package io.rmiri.skeleton.Master;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
@@ -52,7 +51,6 @@ public class SkeletonMaster extends RelativeLayout {
         init(context, attrs);
     }
 
-    @SuppressLint("ResourceAsColor")
     public void init(Context context, @Nullable AttributeSet attrs) {
 
 
@@ -60,11 +58,13 @@ public class SkeletonMaster extends RelativeLayout {
             return;
 
         CLog.i("SkeletonMaster init  " + position);
+        Log.i("APP_TEST", "init");
 
         // Attribute
         skeletonAttribute = new SkeletonAttribute();
-        if (attrs != null) {
+        if (attrs == null) {
 
+            Log.i("APP_TEST", "NULL");
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.Skeleton);
 
             skeletonAttribute.setShowSkeleton(typedArray.getBoolean(R.styleable.Skeleton_SK_isShowSkeleton, true));
